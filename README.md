@@ -189,9 +189,7 @@ Smart-Home-NS3-Zigbee/
 │           ├── smart-home-zigbee-complete.cc
 │           └── CMakeLists.txt
 ├── docs/
-│   ├── Complete_Guide.md
-│   ├── Quick_Start.md
-│   └── Simulation_Results.md
+│   └── projectGuide.pdf
 ├── README.md
 ├── LICENSE
 ├── CHANGELOG.md
