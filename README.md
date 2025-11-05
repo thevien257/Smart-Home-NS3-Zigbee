@@ -198,13 +198,6 @@ Smart-Home-NS3-Zigbee/
 └── .gitignore
 ```
 
-## Documentation
-
-- **[Quick Start Guide](docs/Quick_Start.md)**: Rapid deployment instructions
-- **[Complete Guide](docs/Complete_Guide.md)**: Comprehensive documentation including API reference and extension examples
-- **[Simulation Results](docs/Simulation_Results.md)**: Detailed performance analysis and metrics
-- **[ns-3 ZigBee Documentation](https://www.nsnam.org/docs/models/html/zigbee.html)**: Official ns-3 ZigBee module documentation
-
 ## Extending the Simulation
 
 The simulation framework supports various extensions:
@@ -215,7 +208,7 @@ The simulation framework supports various extensions:
 - **Traffic Patterns**: Event-driven and periodic reporting mechanisms
 - **Network Scaling**: Larger topologies with 50+ nodes
 
-Refer to the [Complete Guide](docs/Complete_Guide.md) for implementation examples.
+Refer to the [Complete Guide](docs/projectGuide.pdf) for implementation examples.
 
 ## Troubleshooting
 
