@@ -6,6 +6,7 @@ set(base_examples
     zigbee-aps-data
     smart-home-zigbee-complete
 )
+
 foreach(
   example
   ${base_examples}
@@ -15,6 +16,5 @@ foreach(
     SOURCE_FILES ${example}.cc
     LIBRARIES_TO_LINK ${libzigbee}
                       ${liblr-wpan}
-                      ${libnetanim}
   )
 endforeach()
