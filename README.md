@@ -29,7 +29,7 @@ cd ~/ns-3-dev
 
 ### Bước 2: Chạy cơ bản
 ```bash
-./ns3 run smart-home-zigbee-performance
+./ns3 run smart-home-zigbee-complete-ver3
 ```
 
 ---
@@ -41,13 +41,13 @@ cd ~/ns-3-dev
 #### `--numNodes` (Số lượng nodes)
 ```bash
 # Mạng nhỏ - tối thiểu
-./ns3 run "smart-home-zigbee-performance --numNodes=3"
+./ns3 run "smart-home-zigbee-complete-ver3 --numNodes=3"
 
 # Mạng vừa - khuyến nghị
-./ns3 run "smart-home-zigbee-performance --numNodes=10"
+./ns3 run "smart-home-zigbee-complete-ver3 --numNodes=10"
 
 # Mạng lớn - test scalability
-./ns3 run "smart-home-zigbee-performance --numNodes=20"
+./ns3 run "smart-home-zigbee-complete-ver3 --numNodes=20"
 ```
 
 **Lưu ý:** Tối thiểu 3 nodes (1 Coordinator + 2 Routers)
@@ -57,13 +57,13 @@ cd ~/ns-3-dev
 #### `--simTime` (Thời gian mô phỏng, giây)
 ```bash
 # Test nhanh
-./ns3 run "smart-home-zigbee-performance --simTime=60"
+./ns3 run "smart-home-zigbee-complete-ver3 --simTime=60"
 
 # Chuẩn
-./ns3 run "smart-home-zigbee-performance --simTime=300"
+./ns3 run "smart-home-zigbee-complete-ver3 --simTime=300"
 
 # Dài hạn
-./ns3 run "smart-home-zigbee-performance --simTime=600"
+./ns3 run "smart-home-zigbee-complete-ver3 --simTime=600"
 ```
 
 ---
@@ -73,10 +73,10 @@ cd ~/ns-3-dev
 #### `--enableNoise` (Bật nhiễu Gaussian)
 ```bash
 # Có nhiễu (mặc định - realistic)
-./ns3 run "smart-home-zigbee-performance --enableNoise=true"
+./ns3 run "smart-home-zigbee-complete-ver3 --enableNoise=true"
 
 # Không nhiễu (ideal channel)
-./ns3 run "smart-home-zigbee-performance --enableNoise=false"
+./ns3 run "smart-home-zigbee-complete-ver3 --enableNoise=false"
 ```
 
 ---
@@ -84,10 +84,10 @@ cd ~/ns-3-dev
 #### `--enableFading` (Bật Rayleigh fading)
 ```bash
 # Có fading (mặc định - realistic)
-./ns3 run "smart-home-zigbee-performance --enableFading=true"
+./ns3 run "smart-home-zigbee-complete-ver3 --enableFading=true"
 
 # Không fading
-./ns3 run "smart-home-zigbee-performance --enableFading=false"
+./ns3 run "smart-home-zigbee-complete-ver3 --enableFading=false"
 ```
 
 ---
@@ -95,13 +95,13 @@ cd ~/ns-3-dev
 #### `--snrThreshold` (Ngưỡng SNR, dB)
 ```bash
 # Chặt chẽ - chất lượng cao
-./ns3 run "smart-home-zigbee-performance --snrThreshold=10.0"
+./ns3 run "smart-home-zigbee-complete-ver3 --snrThreshold=10.0"
 
 # Mặc định
-./ns3 run "smart-home-zigbee-performance --snrThreshold=6.0"
+./ns3 run "smart-home-zigbee-complete-ver3 --snrThreshold=6.0"
 
 # Lỏng lẻo - chấp nhận tín hiệu yếu
-./ns3 run "smart-home-zigbee-performance --snrThreshold=3.0"
+./ns3 run "smart-home-zigbee-complete-ver3 --snrThreshold=3.0"
 ```
 
 ---
@@ -111,10 +111,10 @@ cd ~/ns-3-dev
 #### `--manyToOne` (Chế độ định tuyến)
 ```bash
 # Many-to-One (mặc định - tối ưu cho sensor networks)
-./ns3 run "smart-home-zigbee-performance --manyToOne=true"
+./ns3 run "smart-home-zigbee-complete-ver3 --manyToOne=true"
 
 # Mesh routing (tối ưu cho mạng phân tán)
-./ns3 run "smart-home-zigbee-performance --manyToOne=false"
+./ns3 run "smart-home-zigbee-complete-ver3 --manyToOne=false"
 ```
 
 ---
@@ -124,10 +124,10 @@ cd ~/ns-3-dev
 #### `--exportCSV` và `--csvFile`
 ```bash
 # Xuất ra file mặc định
-./ns3 run "smart-home-zigbee-performance --exportCSV=true"
+./ns3 run "smart-home-zigbee-complete-ver3 --exportCSV=true"
 
 # Xuất ra file tùy chỉnh
-./ns3 run "smart-home-zigbee-performance --exportCSV=true --csvFile=my_test.csv"
+./ns3 run "smart-home-zigbee-complete-ver3 --exportCSV=true --csvFile=my_test.csv"
 ```
 
 ---
@@ -136,7 +136,7 @@ cd ~/ns-3-dev
 
 #### `--verbose` (Log chi tiết)
 ```bash
-./ns3 run "smart-home-zigbee-performance --verbose=true"
+./ns3 run "smart-home-zigbee-complete-ver3 --verbose=true"
 ```
 
 ---
@@ -147,7 +147,7 @@ cd ~/ns-3-dev
 
 #### 1. Test kênh truyền lý tưởng
 ```bash
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=10 \
   --enableNoise=false \
   --enableFading=false \
@@ -160,7 +160,7 @@ cd ~/ns-3-dev
 
 #### 2. Test kênh truyền khắc nghiệt
 ```bash
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=10 \
   --enableNoise=true \
   --enableFading=true \
@@ -177,7 +177,7 @@ cd ~/ns-3-dev
 # Bash script
 for n in 3 5 8 10 15 20; do
   echo "Testing $n nodes..."
-  ./ns3 run "smart-home-zigbee-performance \
+  ./ns3 run "smart-home-zigbee-complete-ver3 \
     --numNodes=$n \
     --simTime=300 \
     --exportCSV=true \
@@ -190,14 +190,14 @@ done
 #### 4. So sánh Mesh vs Many-to-One
 ```bash
 # Mesh
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --manyToOne=false \
   --numNodes=10 \
   --exportCSV=true \
   --csvFile=mesh_results.csv"
 
 # Many-to-One
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --manyToOne=true \
   --numNodes=10 \
   --exportCSV=true \
@@ -209,7 +209,7 @@ done
 #### 5. Test ảnh hưởng SNR threshold
 ```bash
 for snr in 3 6 9 12; do
-  ./ns3 run "smart-home-zigbee-performance \
+  ./ns3 run "smart-home-zigbee-complete-ver3 \
     --snrThreshold=$snr \
     --exportCSV=true \
     --csvFile=snr_impact.csv"
@@ -471,14 +471,14 @@ netanim zigbee-network-with-noise.xml
 
 ```bash
 # Không có noise
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --enableNoise=false \
   --enableFading=false \
   --exportCSV=true \
   --csvFile=exp1_no_noise.csv"
 
 # Có noise
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --enableNoise=true \
   --enableFading=false \
   --exportCSV=true \
@@ -493,14 +493,14 @@ netanim zigbee-network-with-noise.xml
 
 ```bash
 # Không có fading
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --enableNoise=false \
   --enableFading=false \
   --exportCSV=true \
   --csvFile=exp2_no_fading.csv"
 
 # Có fading
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --enableNoise=false \
   --enableFading=true \
   --exportCSV=true \
@@ -517,7 +517,7 @@ netanim zigbee-network-with-noise.xml
 #!/bin/bash
 for nodes in 3 5 8 10 15 20 25; do
   echo "=== Testing with $nodes nodes ==="
-  ./ns3 run "smart-home-zigbee-performance \
+  ./ns3 run "smart-home-zigbee-complete-ver3 \
     --numNodes=$nodes \
     --simTime=300 \
     --exportCSV=true \
@@ -536,7 +536,7 @@ done
 #!/bin/bash
 for snr in 3.0 6.0 9.0 12.0 15.0; do
   echo "=== Testing SNR threshold: $snr dB ==="
-  ./ns3 run "smart-home-zigbee-performance \
+  ./ns3 run "smart-home-zigbee-complete-ver3 \
     --snrThreshold=$snr \
     --exportCSV=true \
     --csvFile=exp4_snr_threshold.csv"
@@ -552,7 +552,7 @@ done
 
 ```bash
 # Many-to-One
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --manyToOne=true \
   --numNodes=15 \
   --simTime=600 \
@@ -560,7 +560,7 @@ done
   --csvFile=exp5_mto.csv"
 
 # Mesh
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --manyToOne=false \
   --numNodes=15 \
   --simTime=600 \
@@ -584,14 +584,14 @@ done
 **Giải pháp:**
 ```bash
 # Giảm SNR threshold
-./ns3 run "smart-home-zigbee-performance --snrThreshold=3.0"
+./ns3 run "smart-home-zigbee-complete-ver3 --snrThreshold=3.0"
 
 # Tắt noise/fading để test
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --enableNoise=false --enableFading=false"
 
 # Giảm số nodes
-./ns3 run "smart-home-zigbee-performance --numNodes=5"
+./ns3 run "smart-home-zigbee-complete-ver3 --numNodes=5"
 ```
 
 ---
@@ -601,10 +601,10 @@ done
 **Giải pháp:**
 ```bash
 # Bật Many-to-One routing
-./ns3 run "smart-home-zigbee-performance --manyToOne=true"
+./ns3 run "smart-home-zigbee-complete-ver3 --manyToOne=true"
 
 # Giảm số nodes
-./ns3 run "smart-home-zigbee-performance --numNodes=8"
+./ns3 run "smart-home-zigbee-complete-ver3 --numNodes=8"
 ```
 
 ---
@@ -618,7 +618,7 @@ done
 
 **Debug:**
 ```bash
-./ns3 run "smart-home-zigbee-performance --verbose=true" \
+./ns3 run "smart-home-zigbee-complete-ver3 --verbose=true" \
   | grep -E "TRANSMITTED|RECEIVED|FAILED"
 ```
 
@@ -629,7 +629,7 @@ done
 **Debug:**
 ```bash
 NS_LOG="ZigbeeNwk=level_debug" \
-  ./ns3 run smart-home-zigbee-performance
+  ./ns3 run smart-home-zigbee-complete-ver3
 ```
 
 ---
@@ -704,7 +704,7 @@ Total Power = TX Power + RX Power + Idle Power
 ```bash
 for seed in 1 2 3 4 5; do
   # Chỉnh RngSeedManager::SetRun($seed) trong code
-  ./ns3 run smart-home-zigbee-performance
+  ./ns3 run smart-home-zigbee-complete-ver3
 done
 ```
 
@@ -722,25 +722,25 @@ TESTS=(
 
 for test in "${TESTS[@]}"; do
   echo "Running: $test"
-  ./ns3 run "smart-home-zigbee-performance $test \
+  ./ns3 run "smart-home-zigbee-complete-ver3 $test \
     --exportCSV=true --csvFile=results.csv"
 done
 ```
 
 ### 3. Lưu log files
 ```bash
-./ns3 run smart-home-zigbee-performance \
+./ns3 run smart-home-zigbee-complete-ver3 \
   > output_$(date +%Y%m%d_%H%M%S).log 2>&1
 ```
 
 ### 4. So sánh kết quả
 ```bash
 # Chạy baseline
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --exportCSV=true --csvFile=baseline.csv"
 
 # Chạy với thay đổi
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --snrThreshold=10.0 \
   --exportCSV=true --csvFile=modified.csv"
 
@@ -768,7 +768,7 @@ for nodes in 3 5 8 10 12 15 18 20; do
   
   for run in {1..5}; do
     echo "  Run $run/5..."
-    ./ns3 run "smart-home-zigbee-performance \
+    ./ns3 run "smart-home-zigbee-complete-ver3 \
       --numNodes=$nodes \
       --simTime=300 \
       --exportCSV=true \
@@ -871,25 +871,25 @@ Nếu cần hỗ trợ:
 ### Lệnh cơ bản nhất
 ```bash
 # Chạy với cấu hình mặc định
-./ns3 run smart-home-zigbee-performance
+./ns3 run smart-home-zigbee-complete-ver3
 ```
 
 ### Lệnh thường dùng
 ```bash
 # Test nhanh
-./ns3 run "smart-home-zigbee-performance --numNodes=5 --simTime=60"
+./ns3 run "smart-home-zigbee-complete-ver3 --numNodes=5 --simTime=60"
 
 # Test đầy đủ + xuất CSV
-./ns3 run "smart-home-zigbee-performance --numNodes=10 --simTime=300 --exportCSV=true"
+./ns3 run "smart-home-zigbee-complete-ver3 --numNodes=10 --simTime=300 --exportCSV=true"
 
 # Test kênh lý tưởng
-./ns3 run "smart-home-zigbee-performance --enableNoise=false --enableFading=false"
+./ns3 run "smart-home-zigbee-complete-ver3 --enableNoise=false --enableFading=false"
 
 # Test kênh khắc nghiệt
-./ns3 run "smart-home-zigbee-performance --enableNoise=true --enableFading=true --snrThreshold=10.0"
+./ns3 run "smart-home-zigbee-complete-ver3 --enableNoise=true --enableFading=true --snrThreshold=10.0"
 
 # Debug mode
-./ns3 run "smart-home-zigbee-performance --verbose=true"
+./ns3 run "smart-home-zigbee-complete-ver3 --verbose=true"
 ```
 
 ---
@@ -960,13 +960,13 @@ Nếu cần hỗ trợ:
 ### 1. Extract specific metrics from log
 ```bash
 # Extract PDR values
-./ns3 run smart-home-zigbee-performance 2>&1 | grep "Packet Delivery Ratio"
+./ns3 run smart-home-zigbee-complete-ver3 2>&1 | grep "Packet Delivery Ratio"
 
 # Extract SNR statistics
-./ns3 run smart-home-zigbee-performance 2>&1 | grep "SNR"
+./ns3 run smart-home-zigbee-complete-ver3 2>&1 | grep "SNR"
 
 # Extract delay information
-./ns3 run smart-home-zigbee-performance 2>&1 | grep "Delay"
+./ns3 run smart-home-zigbee-complete-ver3 2>&1 | grep "Delay"
 ```
 
 ### 2. Run batch tests and save results
@@ -991,7 +991,7 @@ for config in "${CONFIGS[@]}"; do
   
   echo "Testing: nodes=$nodes, time=$time, snr=$snr"
   
-  ./ns3 run "smart-home-zigbee-performance \
+  ./ns3 run "smart-home-zigbee-complete-ver3 \
     --numNodes=$nodes \
     --simTime=$time \
     --snrThreshold=$snr \
@@ -1015,7 +1015,7 @@ echo "Results in: $RESULTS_DIR"
 # compare_configs.sh
 
 echo "Running Configuration A (Ideal)..."
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=10 \
   --enableNoise=false \
   --enableFading=false \
@@ -1023,7 +1023,7 @@ echo "Running Configuration A (Ideal)..."
   --csvFile=config_a.csv" > log_a.txt 2>&1
 
 echo "Running Configuration B (Realistic)..."
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=10 \
   --enableNoise=true \
   --enableFading=true \
@@ -1226,7 +1226,7 @@ mkdir -p $WORK_DIR/{logs,results,plots,reports}
 
 # Phase 1: Baseline Test
 echo -e "\n[Phase 1] Running baseline test..."
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=10 \
   --simTime=300 \
   --exportCSV=true \
@@ -1237,7 +1237,7 @@ echo -e "\n[Phase 1] Running baseline test..."
 echo -e "\n[Phase 2] Running scalability tests..."
 for nodes in 3 5 8 10 12 15 18 20; do
   echo "  Testing with $nodes nodes..."
-  ./ns3 run "smart-home-zigbee-performance \
+  ./ns3 run "smart-home-zigbee-complete-ver3 \
     --numNodes=$nodes \
     --simTime=300 \
     --exportCSV=true \
@@ -1250,7 +1250,7 @@ done
 echo -e "\n[Phase 3] Running channel quality tests..."
 
 # No noise/fading
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=10 \
   --enableNoise=false \
   --enableFading=false \
@@ -1259,7 +1259,7 @@ echo -e "\n[Phase 3] Running channel quality tests..."
   > $WORK_DIR/logs/channel_ideal.log 2>&1
 
 # Only noise
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=10 \
   --enableNoise=true \
   --enableFading=false \
@@ -1268,7 +1268,7 @@ echo -e "\n[Phase 3] Running channel quality tests..."
   > $WORK_DIR/logs/channel_noise.log 2>&1
 
 # Only fading
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=10 \
   --enableNoise=false \
   --enableFading=true \
@@ -1277,7 +1277,7 @@ echo -e "\n[Phase 3] Running channel quality tests..."
   > $WORK_DIR/logs/channel_fading.log 2>&1
 
 # Both noise and fading
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=10 \
   --enableNoise=true \
   --enableFading=true \
@@ -1289,7 +1289,7 @@ echo -e "\n[Phase 3] Running channel quality tests..."
 echo -e "\n[Phase 4] Running SNR threshold tests..."
 for snr in 3.0 6.0 9.0 12.0; do
   echo "  Testing SNR threshold: $snr dB..."
-  ./ns3 run "smart-home-zigbee-performance \
+  ./ns3 run "smart-home-zigbee-complete-ver3 \
     --numNodes=10 \
     --snrThreshold=$snr \
     --exportCSV=true \
@@ -1302,7 +1302,7 @@ done
 echo -e "\n[Phase 5] Running routing comparison..."
 
 # Many-to-One
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=15 \
   --manyToOne=true \
   --simTime=600 \
@@ -1311,7 +1311,7 @@ echo -e "\n[Phase 5] Running routing comparison..."
   > $WORK_DIR/logs/routing_mto.log 2>&1
 
 # Mesh
-./ns3 run "smart-home-zigbee-performance \
+./ns3 run "smart-home-zigbee-complete-ver3 \
   --numNodes=15 \
   --manyToOne=false \
   --simTime=600 \
