@@ -4,7 +4,7 @@ set(base_examples
     zigbee-nwk-routing
     zigbee-nwk-routing-grid
     zigbee-aps-data
-    smart-home-zigbee-complete
+    smart-home-zigbee-complete-ver3
 )
 foreach(
   example
