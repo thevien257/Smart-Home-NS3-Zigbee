@@ -104,16 +104,26 @@ chmod +x ~/ns-3.46/simulate_zigbee.sh
 Mở file `src/zigbee/examples/CMakeLists.txt` và thêm:
 
 ```cmake
-build_lib_example(
-  NAME zigbee-extended-sim
-  SOURCE_FILES zigbee-extended-sim.cc
-  LIBRARIES_TO_LINK
-    ${libcore}
-    ${liblr-wpan}
-    ${libzigbee}
-    ${libmobility}
-    ${libnetanim}
+set(base_examples
+    zigbee-nwk-direct-join
+    zigbee-nwk-association-join
+    zigbee-nwk-routing
+    zigbee-nwk-routing-grid
+    zigbee-aps-data
+    zigbee-extended-sim
 )
+foreach(
+  example
+  ${base_examples}
+)
+  build_lib_example(
+    NAME ${example}
+    SOURCE_FILES ${example}.cc
+    LIBRARIES_TO_LINK ${libzigbee}
+                      ${liblr-wpan}
+                      ${libnetanim}
+  )
+endforeach()
 ```
 
 ### Bước 5: Build lại NS-3
